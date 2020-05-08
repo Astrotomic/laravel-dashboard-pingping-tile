@@ -1,0 +1,60 @@
+{
+    "name": "astrotomic/laravel-dashboard-pingping-tile",
+    "description": "A PingPing tile for Laravel Dashboard",
+    "keywords": [
+        "astrotomic",
+        "laravel-dashboard",
+        "laravel-dashboard-tile",
+        "laravel-dashboard-pingping-tile",
+        "pingping"
+    ],
+    "homepage": "https://github.com/Astrotomic/laravel-dashboard-pingping-tile",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Witkowski",
+            "email": "gummibeer@astrotomic.info",
+            "homepage": "https://gummibeer.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "guzzlehttp/guzzle": "^6.5",
+        "illuminate/console": "^7.0",
+        "illuminate/http": "^7.0",
+        "illuminate/support": "^7.0",
+        "nesbot/carbon": "^2.0",
+        "spatie/laravel-dashboard": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Astrotomic\\PingPingTile\\PingPingTileServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Astrotomic\\PingPingTile\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Astrotomic\\PingPingTile\\Tests\\": "tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    }
+}
