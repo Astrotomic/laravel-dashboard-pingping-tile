@@ -6,34 +6,24 @@
         </div>
         <ul class="self-center | divide-y-2">
             @foreach($monitors as $monitor)
-                <li class="py-1">
-                    <div class="grid grid-cols-1-auto">
-                        <span class="truncate" title="{{ $monitor->name() }}">
-                            {{ $monitor->name() }}
+                <li class="flex py-1">
+                    <span class="flex-grow truncate" title="{{ $monitor->name() }}">
+                        {{ $monitor->name() }}
+                    </span>
+                    <span class="grid grid-cols-2 gap-1">
+                        <span class="
+                            px-2 py-1 uppercase text-center leading-none text-xs rounded border-2
+                            {{ $monitor->uptimeDisplayClass() }}
+                        ">
+                            {{ $monitor->uptimeState() }}
                         </span>
                         <span class="
-                            font-bold
-                            text-uppercase
-                            {{ $monitor->isUp() ? 'text-success' : 'text-error' }}
+                            px-2 py-1 uppercase text-center leading-none text-xs rounded border-2
+                            {{ $monitor->sslDisplayClass() }}
                         ">
-                            {{ $monitor->isUp() ? 'up' : 'down' }}
+                            {{ $monitor->sslState() }}
                         </span>
-                        <span class="
-                            font-bold
-                            text-uppercase
-                            {{ $monitor->isSecure() ? 'text-success' : 'text-error' }}
-                        ">
-                            {{ $monitor->isSecure() ? 'valid' : 'invalid' }}
-                        </span>
-                    </div>
-                    <div class="grid grid-cols-1-auto">
-                        <span class="text-sm leading-none text-dimmed">
-                            ✅ {{ $monitor->avgUptime() }}%
-                        </span>
-                        <span class="text-sm leading-none text-dimmed">
-                            ⌛ {{ $monitor->avgResponseTime() }}ms
-                        </span>
-                    </div>
+                    </span>
                 </li>
             @endforeach
         </ul>

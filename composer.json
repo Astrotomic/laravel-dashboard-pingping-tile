@@ -28,7 +28,6 @@
         "spatie/laravel-dashboard": "^1.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^5.0",
         "phpunit/phpunit": "^9.0"
     },
     "config": {

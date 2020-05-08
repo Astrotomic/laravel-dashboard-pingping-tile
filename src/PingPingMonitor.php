@@ -18,16 +18,6 @@ class PingPingMonitor
         return $this->attributes['alias'];
     }
 
-    public function avgUptime(): float
-    {
-        return $this->attributes['checks']['uptime']['meta']['average_uptime_percentage'];
-    }
-
-    public function avgResponseTime(): float
-    {
-        return $this->attributes['checks']['uptime']['meta']['average_response_time'] * 1000;
-    }
-
     public function isUp(): bool
     {
         return $this->attributes['checks']['uptime']['status'] === 'ok';
@@ -41,5 +31,49 @@ class PingPingMonitor
     public function validTo(): Carbon
     {
         return Carbon::parse($this->attributes['checks']['certificate_health']['meta']['valid_to']);
+    }
+
+    public function uptimeState(): string
+    {
+        if ($this->isUp()) {
+            return 'up';
+        }
+
+        return 'down';
+    }
+
+    public function uptimeDisplayClass(): string
+    {
+        if ($this->isSecure()) {
+            return 'text-green-600 bg-green-200 border-green-600';
+        }
+
+        return 'text-red-600 bg-red-200 border-red-600';
+    }
+
+    public function sslState(): string
+    {
+        if (! $this->isSecure()) {
+            return 'invalid';
+        }
+
+        if(now()->addWeek()->isAfter($this->validTo())) {
+            return now()->diffInDays($this->validTo()).' days';
+        }
+
+        return 'valid';
+    }
+
+    public function sslDisplayClass(): string
+    {
+        if (! $this->isSecure()) {
+            return 'text-red-600 bg-red-200 border-red-600';
+        }
+
+        if(now()->addWeek()->isAfter($this->validTo())) {
+            return 'text-yellow-600 bg-yellow-200 border-yellow-600';
+        }
+
+        return 'text-green-600 bg-green-200 border-green-600';
     }
 }
