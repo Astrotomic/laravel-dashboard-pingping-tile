@@ -9,7 +9,7 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Astrotomic/laravel-dashboard-pingping-tile/run-tests?style=flat-square&logoColor=white&logo=github&label=Tests)](https://github.com/Astrotomic/laravel-dashboard-pingping-tile/actions?query=workflow%3Arun-tests)
 [![StyleCI](https://styleci.io/repos/262285327/shield)](https://styleci.io/repos/262285327)
 
-[![Total Downloads](https://img.shields.io/packagist/dt/astrotomic/laravel-dashboard-pingping-tile.svg?label=Downloads&style=flat-square)](https://packagist.org/packages/astrotomic/laravel-dashboard-pingping-tile) 
+[![Total Downloads](https://img.shields.io/packagist/dt/astrotomic/laravel-dashboard-pingping-tile.svg?label=Downloads&style=flat-square)](https://packagist.org/packages/astrotomic/laravel-dashboard-pingping-tile)
 [![Open Collective](https://img.shields.io/opencollective/all/astrotomic?label=Open%20Collective&style=flat-square)](https://opencollective.com/astrotomic)
 
 This tile can be used on the [Laravel Dashboard](https://docs.spatie.be/laravel-dashboard) to display the status of [PingPing](https://pingping.io/) Monitors.
@@ -55,11 +55,11 @@ protected function schedule(Schedule $schedule)
 
 ## Usage
 
-In your dashboard view you use the `livewire:pingping-tile` component. 
+In your dashboard view you use the `livewire:pingping-tile` component.
 
 ```html
 <x-dashboard>
-    <livewire:pingping-tile position="a1" />
+  <livewire:pingping-tile position="a1" />
 </x-dashboard>
 ```
 
@@ -73,7 +73,7 @@ php artisan vendor:publish --provider="Astrotomic\PingPingTile\PingPingTileServi
 
 ## Testing
 
-``` bash
+```bash
 composer test
 ```
 
