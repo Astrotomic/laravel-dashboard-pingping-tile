@@ -4,7 +4,7 @@ All notable changes to `laravel-dashboard-pingping-tile` will be documented in t
 
 ## v1.1.0 - 2020-09-14
 
-- Add Laravel 8 support
+-   Add Laravel 8 support
 
 ## v1.0.1 - 2020-09-14
 
