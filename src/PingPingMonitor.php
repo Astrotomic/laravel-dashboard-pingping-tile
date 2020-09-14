@@ -57,8 +57,8 @@ class PingPingMonitor
             return 'invalid';
         }
 
-        if (now()->addWeek()->isAfter($this->validTo())) {
-            return now()->diffInDays($this->validTo()).' days';
+        if (Carbon::now()->addWeek()->isAfter($this->validTo())) {
+            return Carbon::now()->diffInDays($this->validTo()).' days';
         }
 
         return 'valid';
@@ -70,7 +70,7 @@ class PingPingMonitor
             return 'text-red-600 bg-red-200 border-red-600';
         }
 
-        if (now()->addWeek()->isAfter($this->validTo())) {
+        if (Carbon::now()->addWeek()->isAfter($this->validTo())) {
             return 'text-yellow-600 bg-yellow-200 border-yellow-600';
         }
 

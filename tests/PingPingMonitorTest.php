@@ -4,7 +4,7 @@ namespace Astrotomic\PingPingTile\Tests;
 
 use Astrotomic\PingPingTile\PingPingMonitor;
 use Carbon\Carbon;
-use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\TestCase;
 
 class PingPingMonitorTest extends TestCase
 {
@@ -20,7 +20,7 @@ class PingPingMonitorTest extends TestCase
                 'certificate_health' => [
                     'status' => 'ok',
                     'meta' => [
-                        'valid_to' => now()->addMonth()->format('Y-m-d H:i:s'),
+                        'valid_to' => Carbon::now()->addMonth()->format('Y-m-d H:i:s'),
                     ],
                 ],
             ],
@@ -46,7 +46,7 @@ class PingPingMonitorTest extends TestCase
                 'certificate_health' => [
                     'status' => 'error',
                     'meta' => [
-                        'valid_to' => now()->subWeek()->format('Y-m-d H:i:s'),
+                        'valid_to' => Carbon::now()->subWeek()->format('Y-m-d H:i:s'),
                     ],
                 ],
             ],
@@ -71,7 +71,7 @@ class PingPingMonitorTest extends TestCase
                 'certificate_health' => [
                     'status' => 'ok',
                     'meta' => [
-                        'valid_to' => now()->addDays(3)->format('Y-m-d H:i:s'),
+                        'valid_to' => Carbon::now()->addDays(3)->format('Y-m-d H:i:s'),
                     ],
                 ],
             ],
