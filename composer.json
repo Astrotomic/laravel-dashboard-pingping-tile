@@ -23,7 +23,7 @@
         "guzzlehttp/guzzle": "^6.5 || ^7.0",
         "illuminate/console": "^8.0",
         "illuminate/http": "^8.0",
-        "illuminate/support": "^8.0",
+        "illuminate/support": "^11.15",
         "nesbot/carbon": "^2.0",
         "spatie/laravel-dashboard": "^2.0"
     },
