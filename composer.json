@@ -24,7 +24,7 @@
         "illuminate/console": "^8.0",
         "illuminate/http": "^8.0",
         "illuminate/support": "^8.0",
-        "nesbot/carbon": "^2.0",
+        "nesbot/carbon": "^3.6",
         "spatie/laravel-dashboard": "^2.0"
     },
     "require-dev": {
